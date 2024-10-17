@@ -1,7 +1,6 @@
-a = float(input("Введи первое число: "))
-b = float(input("Введи второе число: "))
+def IPCheek(elements: list, Index: int):
+    pass
 
-if(b == 0):
-    print("Бесконечность")
-else:
-    print(f'{a} / {b} = {a/b}')
+lists = [12,3,123,21,234,1]
+
+IPCheek(lists, 4)        
