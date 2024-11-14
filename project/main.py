@@ -6,9 +6,12 @@ root.title("Calculator")
 root.geometry("200x100")
 root.resizable(False, False)
 
+def commandPlus():
+    pass
+
 entryNumb1 = ttk.Entry()
 entryNumb2 = ttk.Entry()
-btnPlus = ttk.Button(text = "+")
+btnPlus = ttk.Button(text = "+", command=commandPlus)
 btnMinus = ttk.Button(text = "-")
 btnDevide = ttk.Button(text = "/")
 btnMultiply = ttk.Button(text = "*")
