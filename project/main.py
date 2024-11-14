@@ -1,12 +1,36 @@
-import turtle
+from tkinter import *
+from tkinter import ttk
 
-t = turtle
-t.screensize(500,500)
-t.speed(10)
+root = Tk()
+root.title("Calculator")
+root.geometry("200x100")
+root.resizable(False, False)
 
-def cube(dista: int):
-    for i in range(4):
-        t.forward(dis)        
+entryNumb1 = ttk.Entry()
+entryNumb2 = ttk.Entry()
+btnPlus = ttk.Button(text = "+")
+btnMinus = ttk.Button(text = "-")
+btnDevide = ttk.Button(text = "/")
+btnMultiply = ttk.Button(text = "*")
+#btnResult = ttk.Button(text = "=", width=20)
+LblInfo = ttk.Label(text = "test//")
 
+entryNumb1.grid(row=0,column=0)
+entryNumb2.grid(row=1,column=0)
+btnPlus.grid(row=0,column=1)
+btnMinus.grid(row=1,column=1)
+btnDevide.grid(row=2,column=1)
+btnMultiply.grid(row=3,column=1)
+#btnResult.grid(row=2,column=0)
+LblInfo.grid(row=3,column=0)
 
-t.exitonclick()
+#entryNumb1.pack(anchor="nw")
+#entryNumb2.pack(anchor="nw")
+
+#btnPlus.pack()
+#btnMinus.pack()
+#btnDevide.pack()
+#btnMultiply.pack() 
+#btnResult.pack()
+#LblInfo.pack()
+root.mainloop()
