@@ -8,25 +8,25 @@ root.configure(bg="#b0b8b5")
             #Логика кнопок
 def commandPlus():
     try: 
-        LblInfo["text"] = str(int(entryNumb1.get()) + int(entryNumb2.get()))
+        LblInfo["text"] = str(float(entryNumb1.get()) + float(entryNumb2.get()))
     except:
         LblInfo["text"] = "e"
         
 def commandMinus():
     try: 
-        LblInfo["text"] = str(int(entryNumb1.get()) - int(entryNumb2.get()))
+        LblInfo["text"] = str(float(entryNumb1.get()) - float(entryNumb2.get()))
     except:
         LblInfo["text"] = "e"
 
 def commandMultiply():
     try: 
-        LblInfo["text"] = str(int(entryNumb1.get()) * int(entryNumb2.get()))
+        LblInfo["text"] = str(float(entryNumb1.get()) * float(entryNumb2.get()))
     except:
         LblInfo["text"] = "e"
     
 def commandDevide():
     try: 
-        LblInfo["text"] = str(int(entryNumb1.get()) / int(entryNumb2.get()))
+        LblInfo["text"] = str(float(entryNumb1.get()) / float(entryNumb2.get()))
     except:
         LblInfo["text"] = "e"
         
@@ -38,17 +38,17 @@ def commandCE():
 entryNumb1 = ttk.Entry(relief="ridge", highlightbackground="red", highlightcolor="red", font=("Arial", 24))
 entryNumb2 = ttk.Entry(relief="ridge", highlightbackground="red", highlightcolor="red", font=("Arial", 24))
             #Инициализация кнопок
-btnPlus = ttk.Button(text = "+", command=commandPlus, borderwidth=2)
-btnMinus = ttk.Button(text = "-", command=commandMinus, borderwidth=2)
-btnMultiply = ttk.Button(text = "*", command=commandMultiply, borderwidth=2)
-btnDevide = ttk.Button(text = "/", command=commandDevide, borderwidth=2)
-btnCE = ttk.Button(text = "CE", command=commandCE)
+btnPlus = ttk.Button(text = "+", command = commandPlus)
+btnMinus = ttk.Button(text = "-", command = commandMinus)
+btnMultiply = ttk.Button(text = "*", command = commandMultiply)
+btnDevide = ttk.Button(text = "/", command = commandDevide)
+btnCE = ttk.Button(text = "CE", command = commandCE)
 ALL = [btnPlus, btnMinus, btnMultiply, btnDevide, btnCE]
             #Инициализация ввода
 LblInfo = ttk.Label(text = "0", font=("Arial", 25), justify = "center", background="#b0b8b5")
 #Вывод на экран:
 for i in ALL:
-    i.config(width = 10, height = 2)
+    i.config(width = 10, height = 2, borderwidth = 2)
 
 for c in range(3): root.columnconfigure(index = c , weight = 1)
 for r in range(3): root.rowconfigure(index = r, weight = 1)
