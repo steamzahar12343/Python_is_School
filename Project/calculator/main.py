@@ -9,54 +9,50 @@ root.configure(bg="#b0b8b5")
             #Логика кнопок
 def commandPlus():
     try: 
-        LblInfo["text"] = str(float(entryNumb1.get()) + float(entryNumb2.get()))
-        LblInfo.delete(0, 100)
-        LblInfo.insert(0, str(float(entryNumb1.get()) + float(entryNumb2.get())))
+        Etry.delete(0, 100)
+        Etry.insert(0, str(float(entryNumb1.get()) + float(entryNumb2.get())))
     except:
-        LblInfo["text"] = "e"
+        Etry["text"] = "e"
         
 def commandMinus():
     try: 
-        LblInfo["text"] = str(float(entryNumb1.get()) - float(entryNumb2.get()))
-        LblInfo.delete(0, 100)
-        LblInfo.insert(0, str(float(entryNumb1.get())- float(entryNumb2.get())))
+        Etry.delete(0, 100)
+        Etry.insert(0, str(float(entryNumb1.get())- float(entryNumb2.get())))
     except:
-        LblInfo["text"] = "e"
+        Etry["text"] = "e"
 
 def commandMultiply():
     try: 
-        LblInfo["text"] = str(float(entryNumb1.get()) * float(entryNumb2.get()))
-        LblInfo.delete(0, 100)
-        LblInfo.insert(0, str(float(entryNumb1.get()) * float(entryNumb2.get())))
+        Etry.delete(0, 100)
+        Etry.insert(0, str(float(entryNumb1.get()) * float(entryNumb2.get())))
     except:
-        LblInfo["text"] = "e"
+        Etry["text"] = "e"
     
 def commandDevide():
     try: 
-        LblInfo["text"] = str(float(entryNumb1.get()) / float(entryNumb2.get()))
-        LblInfo.delete(0, 100)
-        LblInfo.insert(0, str(float(entryNumb1.get()) / float(entryNumb2.get())))
+        Etry.delete(0, 100)
+        Etry.insert(0, str(float(entryNumb1.get()) / float(entryNumb2.get())))
     except:
-        LblInfo["text"] = "e"
+        Etry["text"] = "e"
         
 def commandCE():
-    LblInfo.delete(0, 100)
+    Etry.delete(0, 100)
     entryNumb1.delete(0, 100)
     entryNumb2.delete(0, 100)
 
 def commandSqrt():
     try:
-        LblInfo.delete(0, 100)
-        LblInfo.insert(0, str(math.pow(float(entryNumb1.get()),1/float(entryNumb2.get()))))
+        Etry.delete(0, 100)
+        Etry.insert(0, str(math.pow(float(entryNumb1.get()),1/float(entryNumb2.get()))))
     except:
-        LblInfo["text"] = "e"
+        Etry["text"] = "e"
         
 def commandDegr():
     try:
-        LblInfo.delete(0, 100)
-        LblInfo.insert(0, str(math.pow(float(entryNumb1.get()), float(entryNumb2.get()))))
+        Etry.delete(0, 100)
+        Etry.insert(0, str(math.pow(float(entryNumb1.get()), float(entryNumb2.get()))))
     except:
-        LblInfo["text"] = "e"
+        Etry["text"] = "e"
             #Инициализация входных данных      
 entryNumb1 = ttk.Entry(relief="ridge", highlightbackground="red", highlightcolor="red", font=("Arial", 24))
 entryNumb2 = ttk.Entry(relief="ridge", highlightbackground="red", highlightcolor="red", font=("Arial", 24))
@@ -76,7 +72,7 @@ btnSqrt = ttk.Button(text = "√", command=commandSqrt)
 btnDegr = ttk.Button(text =  "a^x", command=commandDegr)
 ALL = [btnPlus, btnMinus, btnMultiply, btnDevide, btnCE, btnSqrt, btnDegr]
             #Инициализация ввода
-LblInfo = ttk.Entry(text = "0", font=("Arial", 25), justify = "center", background="#b0b8b5")
+Etry = ttk.Entry(text = "0", font=("Arial", 25), justify = "center", background="#b0b8b5")
 #Вывод на экран:
 for i in ALL:
     i.config(width = 10, height = 2, borderwidth = 2)
@@ -95,7 +91,7 @@ btnSqrt.grid(row = 3, column = 0)
 btnDegr.grid(row = 3, column = 1)
 btnCE.grid(row = 0, column = 2)
 
-LblInfo.grid(row = 0, column = 1)
+Etry.grid(row = 0, column = 1)
 
 
 root.mainloop()
