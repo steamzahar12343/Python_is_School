@@ -9,7 +9,7 @@ root.title("PassGenerator")
 root.geometry("330x60")
 root.resizable(False, False)
 root.configure(bg="#b0b8b5")
-root.iconphoto(False, tk.PhotoImage(file="Project/PassGen/icon.png"))
+#root.iconphoto(False, tk.PhotoImage(file="Project/PassGen/icon.png"))
 
 def commandGenerate():
     lenPass = comb.get()
